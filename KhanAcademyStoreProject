@@ -1,0 +1,30 @@
+CREATE TABLE instruments (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, color TEXT, size TEXT);
+INSERT INTO instruments VALUES(1, "Electric Guitar", 150, "Red", "Medium");
+INSERT INTO instruments VALUES(2, "Bass Guitar", 130, "Green", "Medium");
+INSERT INTO instruments VALUES(3, "Acoustic Guitar", 140, "Tan", "Medium");
+INSERT INTO instruments VALUES(4, "Ukulele", 100, "Stained Wood", "Small");
+INSERT INTO instruments VALUES(5, "Acoustic Drums", 500, "Pearl White", "Large");
+INSERT INTO instruments VALUES(6, "Electric Drums", 250, "Black", "Large");
+INSERT INTO instruments VALUES(7, "Violin", 200, "Stained Wood", "Small");
+INSERT INTO instruments VALUES(8, "Cello", 300, "Stained Wood", "Medium");
+INSERT INTO instruments VALUES(9, "Standup Bass", 400, "Stained Wood", "Large");
+INSERT INTO instruments VALUES(10, "Trumpet", 200, "Gold", "Small");
+INSERT INTO instruments VALUES(11, "French Horn", 345, "Gold", "Medium");
+INSERT INTO instruments VALUES(12, "Tuba", 500, "Gold", "Large");
+INSERT INTO instruments VALUES(13, "Triangle", 25, "Silver", "Small");
+INSERT INTO instruments VALUES(14, "Cow Bell", 30, "Black", "Small");
+INSERT INTO instruments VALUES(15, "Drum Sticks", 15, "Wood", "Small");
+
+\** This will pull all of the data from the table known as "instruments" **/
+SELECT * FROM instruments;
+
+\** I came up with a scenario where a customer wouldn't want to spend more than $300 on an instrument, so this will list the name and price of instruments
+under $300 and it will order them based on the most expensive to the least expensive **/
+SELECT name, price FROM instruments WHERE price < 300
+ORDER BY price DESC;
+
+\** This will pull all of the data from the insruments table, and it will order it from least expensive to most **/
+SELECT * FROM instruments ORDER BY price;
+
+\** This will select all of the data from the "instruments" table and it will put the names in alphabetical order**/
+SELECT * FROM instruments GROUP BY name;
