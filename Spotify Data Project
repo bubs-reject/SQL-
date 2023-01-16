@@ -1,0 +1,30 @@
+These are questions that I came up with on my own and their solutions.
+
+--Question #1 Which artists appeared more than once on the list?
+--SELECT artist_name, COUNT(artist_name) AS 'Number of songs on list' FROM Spotifydata
+--GROUP BY artist_name
+--HAVING COUNT(artist_name) > 1;
+
+--Question #2 What is the tempo of the top five most popular songs?
+--SELECT track_name , popularity,tempo FROM Spotifydata
+--ORDER BY popularity DESC
+--LIMIT 5;
+
+--Question #3 What is the average danceability of the list?
+--SELECT AVG(danceability) FROM Spotifydata;
+
+--Make a CASE statement using the popularity column and assign "How popular" the songs were.
+--SELECT artist_name, track_name, popularity, 
+--CASE WHEN popularity >= 90 THEN 'The Most Popular'
+--WHEN popularity >= 80 THEN 'Very Popular'
+--WHEN popularity >= 70 THEN 'Popular'
+--ELSE 'Kinda Popular'
+--END AS 'Popular Scale'
+--FROM Spotifydata;
+
+--Which 5 songs were the longest?
+--SELECT artist_name , track_name , duration_ms
+--FROM Spotifydata
+--GROUP BY duration_ms
+--ORDER BY duration_ms DESC
+--LIMIT 5;
