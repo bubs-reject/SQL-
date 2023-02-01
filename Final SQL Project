@@ -1,0 +1,30 @@
+--What countries are the customers from?
+--SELECT DISTINCT Country
+--FROM customers
+
+--How many customers per country?
+--SELECT Country, COUNT(Country) AS cust_count
+--FROM customers
+--GROUP BY Country
+--ORDER BY cust_count DESC
+
+--What are the genres, and how many songs are there per genre?
+--SELECT g.Name, COUNT(g.Name), g.Genreid
+--FROM genres g
+--JOIN tracks t
+--ON g.Genreid = t.Genreid
+--GROUP BY g.Name
+
+--Which 5 songs were purchased the most?
+--SELECT t.Name, COUNT(ii.Quantity) AS count_song
+--FROM tracks t
+--JOIN invoice_items ii
+--ON t.Trackid = ii.Trackid
+--GROUP BY t.Name
+--ORDER BY count_song DESC
+--LIMIT 5
+
+--Amount of money made in 2009
+--SELECT SUM(Total)
+--FROM invoices
+--WHERE InvoiceDate LIKE '%2009%'
